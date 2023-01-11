@@ -1,15 +1,9 @@
 package org.mql.java.examples;
 
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.Vector;
 
-import org.mql.java.models.Classe;
-import org.mql.java.reflection.ClassExplorer;
 import org.mql.java.reflection.PackageExplorer;
-import org.mql.java.reflection.ProjectParser;
-import org.mql.java.ui.ClassSkeletonPanel;
+import org.mql.java.reflection.ProjectExplorer;
 
 public class Examples {
 
@@ -18,14 +12,16 @@ public class Examples {
 	}
 
 	public void exp01() {
-		ProjectParser projectParser = new ProjectParser("bin/");
-		Set<String> packages = projectParser.getPackageNames();
+
+		ProjectExplorer projectExp = new ProjectExplorer("bin/");
+		System.out.println("\t**Pour Notre Poject** ");
+		Set<String> packages = projectExp.getPackageNames();
 		PackageExplorer packageExplorer = new PackageExplorer();
 		for (String pcg : packages) {
-			System.out.println(" \n=>POUR LE PACKAGE : "+ pcg );
+			System.out.println(" \n=>POUR LE PACKAGE : " + pcg);
 			String[] classesNames = packageExplorer.getClassList(pcg);
 			for (String cls : classesNames) {
-				System.out.println("\n\t LA CLASSE :"+cls);
+				System.out.println("\n\t LA CLASSE :" + cls);
 			}
 
 		}
