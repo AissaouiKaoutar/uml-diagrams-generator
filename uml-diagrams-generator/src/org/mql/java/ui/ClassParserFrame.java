@@ -22,7 +22,7 @@ public class ClassParserFrame extends JFrame {
 	}
 
 	private void init() {
-		
+		System.out.println("Squellete De Notre Classe");
 		JPanel panel = new JPanel();
 		setContentPane(panel);
 		panel.setBackground(Color.pink);
