@@ -14,7 +14,6 @@ public class Examples {
 	public void exp01() {
 
 		ProjectExplorer projectExp = new ProjectExplorer("bin/");
-		System.out.println("\t**Pour Notre Poject** ");
 		Set<String> packages = projectExp.getPackageNames();
 		PackageExplorer packageExplorer = new PackageExplorer();
 		for (String pcg : packages) {
