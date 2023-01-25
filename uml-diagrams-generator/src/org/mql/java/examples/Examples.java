@@ -36,19 +36,17 @@ public class Examples {
 
 		ProjectExplorer projectExp = new ProjectExplorer("bin/");
 		List<String> packages = projectExp.getPackageNames();
-		PackageExplorer packageExplorer = new PackageExplorer();
 		Project pr = new Project();
 		pr.setProjectName("uml-diagrams-generator");
 		List<Package> pack = new Vector<>();
-
 		for (int i = 0; i < packages.size(); i++) {
 			Package pk = new Package(packages.get(i));	
 			List<Classe> cls = new Vector<>();
+		    PackageExplorer packageExplorer = new PackageExplorer();
 
-			for (int j = 0; j < pk.getClasses().size(); j++) {
-				ClassExplorer exp = new ClassExplorer(pk.getClasses().get(j).getClassName());
+			for (int j = 0; j < packageExplorer.getClassList(packages.get(i)).length; j++) {
+				ClassExplorer exp = new ClassExplorer( packageExplorer.getClassList(packages.get(i))[j]);
 				cls.add(exp.getSkeleton());
-
 			}
 			pk.setClass(cls);
 			pack.add(pk);

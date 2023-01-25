@@ -79,9 +79,7 @@ public class ClassExplorer {
 			String modifier = getModifier(method.getModifiers());
 			org.mql.java.models.Method m = new org.mql.java.models.Method(modifier, type, nom);
 			Parameter[] params = method.getParameters();
-			for (Parameter p : params) {
-				
-				System.out.println(method.getName() + " ( " + p.getType().getName() + " ) ");
+			for (Parameter p : params) {		
 				m.addParameter(new Property(p.getName(), p.getType()));
 			}
 			methods.add(m);

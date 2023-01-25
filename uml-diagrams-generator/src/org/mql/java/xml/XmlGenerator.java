@@ -82,13 +82,13 @@ public class XmlGenerator {
 			xmlData += XmlMethodes(cls.getMethods().get(i));
 
 		}
-		for (int i = 0; i < cls.getInterfaces().size(); i++) {
-			xmlData += "<interface>" + cls.getInterfaces().get(i) + "</interfaces>";
+		//for (int i = 0; i < cls.getInterfaces().size(); i++) {
+		//	xmlData += "<interface>" + cls.getInterfaces().get(i) + "</interfaces>";
 
-		}
+	//	}
 		xmlData += "<superClass>" + cls.getSuperClass() + "</superClass>";
 
-		xmlData += "</package>";
+		xmlData += "</classe>";
 		return xmlData;
 	}
 
@@ -96,6 +96,7 @@ public class XmlGenerator {
 
 		String xmlData = "<package>";
 		xmlData += "<name>" + pack.getPackageName() + "</name>";
+		
 		for (int i = 0; i < pack.getClasses().size(); i++) {
 			xmlData += XmlClasses(pack.getClasses().get(i));
 
@@ -108,14 +109,15 @@ public class XmlGenerator {
 
 	public String XmlProjet(Project proj) {
 
-		String xmlData = "<package>";
+		String xmlData = "<projet>";
 		xmlData += "<name>" + proj.getProjectName() + "</name>";
+		
 		for (int i = 0; i < proj.getPackages().size(); i++) {
 			xmlData += XmlPackage(proj.getPackages().get(i));
 
 		}
 
-		xmlData += "</package>";
+		xmlData += "</projet>";
 		return xmlData;
 
 	}
