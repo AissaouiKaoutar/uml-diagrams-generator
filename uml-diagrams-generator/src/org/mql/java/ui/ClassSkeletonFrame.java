@@ -13,10 +13,10 @@ import java.awt.TextArea;
 import javax.swing.*;
 
 
-public class ClassParserFrame extends JFrame {
+public class ClassSkeletonFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 
-	public ClassParserFrame() {
+	public ClassSkeletonFrame() {
 		init();
 		config();
 	}
@@ -43,7 +43,7 @@ public class ClassParserFrame extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new ClassParserFrame();
+		new ClassSkeletonFrame();
 	}
 
 }

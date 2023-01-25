@@ -2,39 +2,48 @@ package org.mql.java.reflection;
 
 import java.io.File;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.Vector;
+
 
 public class ProjectExplorer {
-	private String path;
-	private Set<String> packageNames = new HashSet<>();
-
+	private Vector<String> packageNames = new Vector<>();
+	private String rootPath;
+	
+	
 	public ProjectExplorer(String projectName) {
-		String path = System.getProperty("java.class.path");
-		File dir = new File(path);
-		path = dir.getPath();
+		String classpath = System.getProperty("java.class.path");
+		File dir = new File(classpath);
+		rootPath= dir.getPath();
 		getPackage(dir);
-
+		
+		
 	}
-
-	public void getPackage(File dir) {
+	public void getPackage(File dir){
+		
 
 		File[] files = dir.listFiles();
-
+		
 		for (File file : files) {
-			if (file.isDirectory()) {
-
+			if (file.isDirectory()){
+				
 				getPackage(file);
-			} else {
-				String s = dir.getPath().replace(path, "");
-				packageNames.add(s.replace("\\", ".").replaceFirst(".", ""));
-
+			}
+			else {
+				String s =dir.getPath().replace(rootPath, "");
+				packageNames.add(s.replace("\\",".").replaceFirst(".", ""));
+				
 			}
 		}
-
+		
+	
 	}
-
-	public Set<String> getPackageNames() {
+	public Vector<String> getPackageNames() {
 		return packageNames;
 	}
 
 }
+
+
+

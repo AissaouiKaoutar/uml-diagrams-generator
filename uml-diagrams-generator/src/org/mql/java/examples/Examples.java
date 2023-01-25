@@ -1,7 +1,9 @@
 package org.mql.java.examples;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Vector;
 
+import org.mql.java.models.Classe;
 import org.mql.java.reflection.PackageExplorer;
 import org.mql.java.reflection.ProjectExplorer;
 
@@ -11,10 +13,11 @@ public class Examples {
 		exp01();
 	}
 
+
 	public void exp01() {
 
 		ProjectExplorer projectExp = new ProjectExplorer("bin/");
-		Set<String> packages = projectExp.getPackageNames();
+		Vector<String> packages = projectExp.getPackageNames();
 		PackageExplorer packageExplorer = new PackageExplorer();
 		for (String pcg : packages) {
 			System.out.println(" \n=>POUR LE PACKAGE : " + pcg);

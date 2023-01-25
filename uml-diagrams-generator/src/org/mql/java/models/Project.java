@@ -1,5 +1,6 @@
 package org.mql.java.models;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
@@ -37,7 +38,13 @@ public class Project {
 		this.packages.add(pckg);
 	}
 
-
+	public List<Classe> getAllClasses() {
+		List<Classe> allClasses = new Vector<>();
+		for (Package p : packages) {
+			allClasses.addAll(p.getClassInfo());
+		}
+		return allClasses;
+	}
 	
 
 }

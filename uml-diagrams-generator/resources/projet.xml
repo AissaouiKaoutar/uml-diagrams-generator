@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projet>
+	<packages>
+		<package name="org.mql.java.models" >
+			<classes>
+				<classe name="Personne">
+					<methodes>
+					
+						<methode name="getFirtName" type="String" modifier="private">	
+						
+						<params>
+							<param name="FirtName" type="String"/>
+					    </params>
+					    
+						</methode>
+						
+					</methodes>
+					
+					<properties>
+						<property name="FirtName" type="String" modifier="public"></property>
+					</properties>
+					
+					<constructor name="Personne" modifier="public">
+						
+						<params>
+							<param name="FirtName" type="String" />
+					    </params>
+					    
+					</constructor>
+				</classe>
+			</classes>
+		</package>
+	</packages>
+</projet>
