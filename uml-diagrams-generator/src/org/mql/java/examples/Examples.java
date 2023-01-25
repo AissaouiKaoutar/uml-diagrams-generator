@@ -3,7 +3,6 @@ package org.mql.java.examples;
 import java.util.List;
 import java.util.Vector;
 
-import org.mql.java.models.Classe;
 import org.mql.java.reflection.PackageExplorer;
 import org.mql.java.reflection.ProjectExplorer;
 
