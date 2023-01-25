@@ -6,10 +6,10 @@ import java.util.Vector;
 public class Package {
 	
 	public String packageName;
-	private List<Classe> classesInfo;
+	private List<Classe> classes;
 
 	public Package() {
-		this.classesInfo = new Vector<Classe>();
+		this.classes = new Vector<Classe>();
 	}
 	
 	public Package(String packageName) {
@@ -25,13 +25,13 @@ public class Package {
 		this.packageName = packageName;
 	}
 
-	public List<Classe> getClassInfo() {
-		return classesInfo;
+	public List<Classe> getClasses() {
+		return classes;
 	}
-	public void setClassInfo(List<Classe> classesInfo) {
-		this.classesInfo= classesInfo;
+	public void setClass(List<Classe> classes) {
+		this.classes= classes;
 	}
-	public void addClassInfo(Classe classInfo) {
-		this.classesInfo.add(classInfo);
+	public void addClass(Classe classes) {
+		this.classes.add(classes);
 	}
 }

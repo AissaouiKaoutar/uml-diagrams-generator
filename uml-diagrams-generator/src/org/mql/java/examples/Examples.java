@@ -3,15 +3,19 @@ package org.mql.java.examples;
 import java.util.List;
 import java.util.Vector;
 
+import org.mql.java.models.Classe;
+import org.mql.java.models.Package;
+import org.mql.java.models.Project;
+import org.mql.java.reflection.ClassExplorer;
 import org.mql.java.reflection.PackageExplorer;
 import org.mql.java.reflection.ProjectExplorer;
+import org.mql.java.xml.XmlGenerator;
 
 public class Examples {
 
 	public Examples() {
-		exp01();
+		exp02();
 	}
-
 
 	public void exp01() {
 
@@ -26,6 +30,33 @@ public class Examples {
 			}
 
 		}
+	}
+
+	public void exp02() {
+
+		ProjectExplorer projectExp = new ProjectExplorer("bin/");
+		List<String> packages = projectExp.getPackageNames();
+		PackageExplorer packageExplorer = new PackageExplorer();
+		Project pr = new Project();
+		pr.setProjectName("uml-diagrams-generator");
+		List<Package> pack = new Vector<>();
+
+		for (int i = 0; i < packages.size(); i++) {
+			Package pk = new Package(packages.get(i));	
+			List<Classe> cls = new Vector<>();
+
+			for (int j = 0; j < pk.getClasses().size(); j++) {
+				ClassExplorer exp = new ClassExplorer(pk.getClasses().get(j).getClassName());
+				cls.add(exp.getSkeleton());
+
+			}
+			pk.setClass(cls);
+			pack.add(pk);
+
+		}
+		pr.setPackages(pack);
+		XmlGenerator gener= new XmlGenerator("resources/xmlProjet.xml", pr);
+
 	}
 
 	public static void main(String[] args) {

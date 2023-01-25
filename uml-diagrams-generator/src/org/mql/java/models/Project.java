@@ -41,7 +41,7 @@ public class Project {
 	public List<Classe> getAllClasses() {
 		List<Classe> allClasses = new Vector<>();
 		for (Package p : packages) {
-			allClasses.addAll(p.getClassInfo());
+			allClasses.addAll(p.getClasses());
 		}
 		return allClasses;
 	}
