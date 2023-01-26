@@ -14,7 +14,7 @@ import org.mql.java.xml.XmlGenerator;
 public class Examples {
 
 	public Examples() {
-		exp02();
+		exp01();
 	}
 
 	public void exp01() {
